@@ -1,0 +1,8 @@
+.navigation-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
