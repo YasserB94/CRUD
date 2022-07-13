@@ -8,9 +8,18 @@ require __DIR__ . '/Controllers/DefaultController.php';
 require __DIR__ . '/Controllers/GroupController.php';
 require __DIR__ . '/Controllers/StudentController.php';
 require __DIR__ . '/Controllers/TeacherController.php';
+//Symfony Dotenv parses .env files to make environment variables stored in them accessible via $_SERVER or $_ENV.
+require_once realpath(__DIR__ . "/vendor/autoload.php");
+
+use Symfony\Component\Dotenv\Dotenv;
+//Create dotenv object
+$dotenv = new Dotenv();
+//Load .env vars into superglobal $_ENV
+$dotenv->load(__DIR__ . "/.env");
 
 //Load in the header - Head,Opening of body
 require __DIR__ . '/Views/header.php';
+
 
 $controller = new DefaultController($_POST, $_GET);
 if (isset($_GET['page'])) {
