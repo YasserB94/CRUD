@@ -1,0 +1,81 @@
+- GIT/GITHUB
+	MAIN -> Enkele correcte code 
+	Production -> Merge your stuff for approval
+	- C_DBConnectorHelperClass
+	-C_GroupLoaderHelperClass
+	-C_UpdateToView
+	-D_IkMaakSQL
+	-Y_Lallaland
+
+
+SETUP MVC BOILERPLATE
+
+ANALYSE VAN OPDRACHT 
+	Models ?
+		Group
+			name
+			teacher
+			students
+		Person
+			Student
+				name
+				group name
+				teacher’s name
+			Teacher
+				name
+				group name
+	Helpers ? 
+		DBConnector
+			GroupLoader
+				-> Get all groups
+			Student loader
+				-> Get all students
+			TeacherLoader
+				-> Gets teachers
+	Views ?
+		HomeView
+			-> General overview
+		StudentView
+		TeacherView
+		GroupView
+	Controllers ? 
+		HomeController
+		StudentController
+		TeacherController
+		GroupController
+
+		
+	DATABASE
+		Tables
+			Group
+				Cols
+					id -> Primary key
+					name
+					teacher
+			Student
+				Cols 
+					id -> Primary key
+					name
+					group_id -> Foreign Key -> Referencing to Group id
+			Teacher
+				Cols
+					id -> Primary key
+					name
+					group_id -> Foreign Key -> Referencing to ID
+
+PAGE NAVIGATION -> USE GET -> USE NAME ‘PAGE’
+
+
+
+13/07
+DIMI -> Create database and Query for us to fire and copy the DB Locally
+YASSER -> .ENV SUPPORT 
+			DBCONNECTOR
+CEDRIC -> HomePageController
+			HomePageView
+								
+
+14/07
+
+
+15/07
