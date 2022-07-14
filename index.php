@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 //MODELS
+require __DIR__ . '/Models/Group.php';
 
 //HelperModels
 require __DIR__ . '/Models/Helpers/DB_Connector.php';
+require __DIR__ . '/Models/Helpers/DBGroupLoader.php';
 
 //CONTROLLERS
 require __DIR__ . '/Controllers/DefaultController.php';
@@ -41,5 +43,4 @@ if (isset($_GET['page'])) {
 }
 $controller->render();
 //Load in the footer - Closing of body and document
-
 require __DIR__ . '/Views/footer.php';
