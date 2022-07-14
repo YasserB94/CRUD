@@ -2,12 +2,18 @@
 As long as you do not have a .env file you should/will get errors!
 
 ## Get Symfony's DotEnv Class
-Run
+Get the dotenv files from symfony using composer
 ```bash
 composer require symfony/dotenv
 ```
+Run composer install so that everything is in order
+```bash
+composer install
+```
 ## Update gitignore 
 Do not forget to update your gitignore
+
+Let's ignore the new vendor folder (these commands will add them)
 ```bash
 echo "#ignore vendor folder" >> .gitignore;
 echo "/vendor" >> .gitignore;
