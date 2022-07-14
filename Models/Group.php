@@ -8,4 +8,12 @@ class Group
         $this->id = $groupId;
         $this->name = $groupName;
     }
+    public function getID()
+    {
+        return $this->id;
+    }
+    public function getName()
+    {
+        return $this->name;
+    }
 }
