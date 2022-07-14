@@ -1,3 +1,7 @@
+How to import SQL File:
+first on your DBConnection right click to create a new schema.
+import the SQL File in this schema and execute it
+
 Group Table:
 ![image](https://user-images.githubusercontent.com/77209365/178926352-6c93d35e-3430-47af-9569-06b863b44ca7.png)
 
