@@ -3,6 +3,9 @@
 declare(strict_types=1);
 //MODELS
 
+//HelperModels
+require __DIR__ . '/Models/Helpers/DB_Connector.php';
+
 //CONTROLLERS
 require __DIR__ . '/Controllers/DefaultController.php';
 require __DIR__ . '/Controllers/GroupController.php';
@@ -19,7 +22,6 @@ $dotenv->load(__DIR__ . "/.env");
 
 //Load in the header - Head,Opening of body
 require __DIR__ . '/Views/header.php';
-
 
 $controller = new DefaultController($_POST, $_GET);
 if (isset($_GET['page'])) {
