@@ -1,3 +1,4 @@
+
 - GIT/GITHUB
 	MAIN -> Enkele correcte code 
 	Production -> Merge your stuff for approval
@@ -79,3 +80,4 @@ CEDRIC -> HomePageController
 
 
 15/07
+
