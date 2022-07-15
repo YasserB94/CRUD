@@ -12,4 +12,39 @@ abstract class DBStudentLoader extends DB_Connector
         }
         return $allstudents;
     }
+    public static function getStudentByID(int $id):Student{
+        $pdo = self::connect();
+        $sql = 'SELECT * FROM student_table WHERE id='.$id;
+        $data = $pdo->query($sql);
+        while($row=$data->fetch(PDO::FETCH_NUM)){
+            $group = new Group($row[0],$row[1]);
+            return $group;
+        }
+
+    }
+    public static function addStudent(string $studentname)
+    {
+        $pdo = self::connect();
+        $tableName = 'student_table';
+        $sql = 'INSERT INTO student_table(name) VALUES(:name)';
+        $statement = $pdo->prepare($sql);
+        $statement->execute([
+            ':name' => $studentname
+        ]);
+    }
+
+    public static function deleteStudentByID(int $id){
+        $pdo = self::connect();
+        $tableName = 'student_table';
+        $sql = 'DELETE FROM student_table WHERE id =' . $id;
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+    }
+    public static function editStudentNameByID(int $id,string $newName){
+        $pdo = self::connect();
+        $tableName = 'student_table';
+        $sql = 'UPDATE student_table SET name=? WHERE id=?';
+        $statement = $pdo->prepare($sql);
+        $statement->execute([$newName,$id]);
+    }
 }
