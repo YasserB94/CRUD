@@ -10,14 +10,14 @@ class GroupController
         //Let's see if the user pressed the add button
         if(isset($_POST['addGroupName'])){
             //Let's get the value thats in the groupname
-            $newGroupname = $_POST['addGroupName'];
+            $newGroupname = htmlspecialchars($_POST['addGroupName']);
             //Let's tell our DB connection class to add a new group, and give it our new group name.
             DBGroupLoader::addGroup($newGroupname);
         }
         //Did the user give us a new name for an existing group ? 
         if(isset($_POST['newGroupName'])){
             //Let's get that name 
-            $newName = $_POST['newGroupName'];
+            $newName = htmlspecialchars($_POST['newGroupName']);
             //Lets now get the ID of the group they want to update (The confirming button will set this value)
             $idOfGroupToUpdate = $_POST['idOfGroupToUpdate'];
             //Now lets again tell our database connection to edit the groupname. 
