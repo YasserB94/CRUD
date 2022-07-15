@@ -3,6 +3,7 @@
 class GroupController
 {
     public function __construct(){
+        //I used the $_POST array to tell the server if the user wants to do an action, so here we'll see if the user picked one of those options.
         $this->checkForOptions();
     }
     private function checkForOptions(){
@@ -11,7 +12,6 @@ class GroupController
             DBGroupLoader::addGroup($newGroupname);
         }
         if(isset($_POST['newGroupName'])){
-
             $newName = $_POST['newGroupName'];
             $idOfGroupToUpdate = $_POST['idOfGroupToUpdate'];
             DBGroupLoader::editGroupNameByID($idOfGroupToUpdate,$newName);
@@ -36,6 +36,9 @@ class GroupController
     private function renderAllGroups()
     {
         $groups = DBGroupLoader::getAllGroups();
+        if(!$groups){
+            echo 'There are currently no groups in our database, please add them with the button';
+        }
         foreach ($groups as $key => $group) {
             require __DIR__ . '../../Views/groupView.php';
         }
