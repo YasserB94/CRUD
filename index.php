@@ -3,10 +3,12 @@
 declare(strict_types=1);
 //MODELS
 require __DIR__ . '/Models/Group.php';
+require __DIR__ . '/Models/Teacher.php';
 
 //HelperModels
 require __DIR__ . '/Models/Helpers/DB_Connector.php';
 require __DIR__ . '/Models/Helpers/DBGroupLoader.php';
+require __DIR__ . '/Models/Helpers/DBTeacherLoader.php';
 
 //CONTROLLERS
 require __DIR__ . '/Controllers/DefaultController.php';

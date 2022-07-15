@@ -4,6 +4,18 @@ class TeacherController
 {
     public function render()
     {
-        echo 'RenderTeacherController';
-    }
+        $teachers = DBTeacherLoader::getAllTeachers();
+
+        foreach ($teachers as $value => $teacher) {
+            require __DIR__ . '../../Views/teacherView.php';
+        }
+       
+  
+      
+
 }
+
+}
+
+
+
