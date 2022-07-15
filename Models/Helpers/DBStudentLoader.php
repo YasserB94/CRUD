@@ -17,8 +17,8 @@ abstract class DBStudentLoader extends DB_Connector
         $sql = 'SELECT * FROM student_table WHERE id='.$id;
         $data = $pdo->query($sql);
         while($row=$data->fetch(PDO::FETCH_NUM)){
-            $group = new Group($row[0],$row[1]);
-            return $group;
+            $student = new Student($row[0],$row[1]);
+            return $student;
         }
 
     }
