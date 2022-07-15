@@ -12,4 +12,21 @@ abstract class DBGroupLoader extends DB_Connector
         }
         return $allgroups;
     }
+    public static function addGroup(string $groupname)
+    {
+        $pdo = self::connect();
+        $tableName = 'group_table';
+        $sql = 'INSERT INTO group_table(name) VALUES(:name)';
+        $statement = $pdo->prepare($sql);
+        $statement->execute([
+            ':name' => $groupname
+        ]);
+    }
+    public static function deleteGroupByID(int $id){
+        $pdo = self::connect();
+        $tableName = 'group_table';
+        $sql = 'DELETE FROM group_table WHERE id =' . $id;
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+    }
 }
