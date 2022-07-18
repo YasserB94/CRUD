@@ -7,13 +7,14 @@ class StudentController
     }
     private function checkForOptions(){
         if(isset($_POST['addStudentName'])){
-            $newStudentname = $_POST['addStudentName'];
+            //Let's get that name
+            $newStudentname = htmlspecialchars($_POST['addStudentName']);
             DBStudentLoader::addStudent($newStudentname);
         }
         if(isset($_POST['newStudentName'])){
 
             $newName = $_POST['newStudentName'];
-            $idOfStudentToUpdate = $_POST['idOfStudentToUpdate'];
+            $idOfStudentToUpdate = htmlspecialchars($_POST['idOfStudentToUpdate']);
             DBStudentLoader::editStudentNameByID($idOfStudentToUpdate,$newName);
         }
         if(isset($_POST['deleteStudent'])){
